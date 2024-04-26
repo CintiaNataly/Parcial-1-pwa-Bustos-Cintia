@@ -1,0 +1,18 @@
+body {
+    margin: auto;
+}
+
+h1 {
+    display: none;
+}
+
+main {
+    max-width: 980px;
+}
+
+.logo-principal{
+    display: block;
+    margin: auto;
+
+    max-width: 600px;
+}
