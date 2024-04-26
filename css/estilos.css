@@ -15,5 +15,10 @@ main {
     display: block;
     margin: auto;
 
-    max-width: 600px;
+    max-width: 550px;
+}
+
+.modificaciones {
+    border-radius: 5px;
+    margin-bottom: 1rem;
 }

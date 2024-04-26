@@ -12,12 +12,67 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        .loading{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: white;
+            z-index: 9;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        .loading.deactivate{
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <h1>Los Simpsons</h1>
         <img src="img/logo.png" alt="logo de los simpsons" class="logo-principal">
+
+        <nav class="navbar bg-body-tertiary container modificaciones">
+            <div class="container-fluid">
+                <!-- Boton de HISTORIAL -->
+                <button type="button" id="mostrarHistorial" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHistorial">
+                    Historial
+                </button>
+
+                <!-- Modal HISTORIAL -->
+                <div class="modal fade " id="modalHistorial" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title fs-5" id="staticBackdropLabel">Visto!</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>Total: <span id="resultado"></span></div>
+                                <ul class="capitulos_vistos" id="capitulos_vistos" style="list-style: none;">
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Nombre del capitulo"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </nav>
     </header>
 
     <main class="container">
@@ -28,8 +83,11 @@
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" id="modalContent">
+                    <div class="loading" id="loading">
+                        <img src="loading.gif" class="img-fluid" alt="" style="max-width: 60px;">
+                    </div>
                     <div class="modal-header">
                         <h2 class="modal-title fs-5" id="titulo">Modal title</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
