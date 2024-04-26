@@ -78,6 +78,7 @@ fetch(URL_EPISODES)
 
                         // Obtener los elementos del modal
                         const titleElement = document.getElementById('titulo');
+                        const imgElement = document.getElementById('img');
                         const tempElement = document.getElementById('temporada');
                         const capElement = document.getElementById('episodio');
                         const ratingElement = document.getElementById('rating');
@@ -86,6 +87,7 @@ fetch(URL_EPISODES)
 
                         // Asignar la información de la API a los elementos del modal
                         titleElement.textContent = data.name;
+                        imgElement.src = data.thumbnailUrl;
                         tempElement.innerHTML = "<strong>Temporada:</strong> " + data.season;
                         capElement.innerHTML = "<strong>Capitulo:</strong> " + data.episode;
                         ratingElement.innerHTML = "<strong>Rating:</strong> " + data.rating;
