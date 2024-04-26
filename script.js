@@ -4,7 +4,7 @@ const URL_EPISODES = "https://api.sampleapis.com/simpsons/episodes";
 fetch(URL_EPISODES)
     .then(data => data.json())
     .then(result => {
-        const results = result.slice(0, 99);
+        const results = result.slice(0, 100);
         console.log(results);
 
         const listado = document.getElementById('listado_items');
@@ -13,13 +13,15 @@ fetch(URL_EPISODES)
             const div = document.createElement('div');
 
 
-            // Agregar la clase "col-md-4" al elemento <li>
+            // Agregar la clase "col-md-4" al elemento <div>
             div.classList.add('col-md-4');
             div.classList.add('mb-2');
 
             // Crear el elemento <div> con la clase "card"
             const cardDiv = document.createElement('div');
             cardDiv.classList.add('card');
+            cardDiv.style.border = 'none';
+            cardDiv.style.minHeight = '400px'; 
 
             // Crear el elemento <img> con las clases necesarias
             const img = document.createElement('img');
@@ -55,7 +57,7 @@ fetch(URL_EPISODES)
             // Agregar el div de la tarjeta al elemento <li>
             div.appendChild(cardDiv);
 
-            // Agregar el elemento <li> a la lista
+            // Agregar el elemento <div> a la lista
             listado.appendChild(div);
 
 
@@ -73,6 +75,23 @@ fetch(URL_EPISODES)
                     .then(response => response.json())
                     .then(data => {
                         console.log(data);
+
+                        // Obtener los elementos del modal
+                        const titleElement = document.getElementById('titulo');
+                        const tempElement = document.getElementById('temporada');
+                        const capElement = document.getElementById('episodio');
+                        const ratingElement = document.getElementById('rating');
+                        const contentElement = document.
+                        getElementById('descripcion');
+
+                        // Asignar la información de la API a los elementos del modal
+                        titleElement.textContent = data.name;
+                        tempElement.innerHTML = "<strong>Temporada:</strong> " + data.season;
+                        capElement.innerHTML = "<strong>Capitulo:</strong> " + data.episode;
+                        ratingElement.innerHTML = "<strong>Rating:</strong> " + data.rating;
+                        contentElement.textContent = data.description;
+
+
                         // Aquí puedes hacer lo que quieras con los datos, por ejemplo, mostrarlos en la página web.
                     })
                     .catch(error => {
