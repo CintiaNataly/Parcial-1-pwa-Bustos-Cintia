@@ -21,6 +21,7 @@ main {
 .modificaciones {
     border-radius: 5px;
     margin-bottom: 1rem;
+    background-color: black;
 }
 
 .loading{
@@ -38,4 +39,12 @@ main {
 
 .loading.deactivate{
     display: none;
+}
+
+.unpoquitodeestilo{
+    border-radius: 5px;
+    border: none;
+    background-color: black;
+    color: whitesmoke;
+    padding: 2px 4px;
 }

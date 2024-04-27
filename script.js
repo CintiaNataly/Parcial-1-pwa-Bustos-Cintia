@@ -194,6 +194,3 @@ function checkImageExists(url, callback) {
     };
     img.src = url;
 }
-
-
-

@@ -19,10 +19,10 @@
         <h1>Los Simpsons</h1>
         <img src="img/logo.png" alt="logo de los simpsons" class="logo-principal">
 
-        <nav class="navbar bg-body-tertiary container modificaciones">
+        <nav class="navbar  container modificaciones">
             <div class="container-fluid">
                 <!-- Boton de HISTORIAL -->
-                <button type="button" id="mostrarHistorial" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalHistorial">
+                <button type="button" id="mostrarHistorial" class="btn unpoquitodeestilo" data-bs-toggle="modal" data-bs-target="#modalHistorial">
                     Historial
                 </button>
 
@@ -48,16 +48,20 @@
                         </div>
                     </div>
                 </div>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Nombre del capitulo"
-                        aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
+                <select id="temporadaMenu" class="unpoquitodeestilo">
+                    <option value="todos">Todas las temporadas</option>
+                    <option value="1">Temporada 1</option>
+                    <option value="2">Temporada 2</option>
+                    <option value="3">Temporada 3</option>
+                    <option value="4">Temporada 4</option>
+                    <option value="5">Temporada 5</option>
+                  </select>
             </div>
         </nav>
     </header>
 
     <main class="container">
+
         <div class="row" id="listado_items">
 
         </div>
