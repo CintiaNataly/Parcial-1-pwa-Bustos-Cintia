@@ -196,17 +196,4 @@ function checkImageExists(url, callback) {
 }
 
 
-/*
 
-// Recupera el valor almacenado en localStorage
-const capituloSeleccionado = localStorage.getItem('capituloSeleccionado');
-
-// Verifica si el valor existe
-if (capituloSeleccionado) {
-    // Si existe, muestra el valor en el elemento HTML con el ID "resultado"
-    document.getElementById('resultado').textContent = "Capitulos vistos: " + capituloSeleccionado;
-} else {
-    // Si no existe un valor en localStorage, muestra un mensaje indicando que no hay ningún capítulo seleccionado
-    document.getElementById('resultado').textContent = "No se ha seleccionado ningún capítulo.";
-}
-*/
