@@ -154,7 +154,6 @@ const btnMostrarHistorial = document.getElementById("mostrarHistorial");
 const ulListado = document.getElementById("capitulos_vistos");
 
 // Añadiendo un event listener al botón para capturar el click
-// Añadiendo un event listener al botón para capturar el click
 btnMostrarHistorial.addEventListener("click", function () {
     // Paso 1: Cargar el array del localStorage
     let dataArray = JSON.parse(localStorage.getItem("myDataArray"));
@@ -181,6 +180,14 @@ btnMostrarHistorial.addEventListener("click", function () {
         ulListado.innerHTML = "<li>No hay datos en el historial</li>";
     }
 });
+
+//Borrar el historial de la modal
+document.getElementById('vaciarLocalStorage').addEventListener('click', function() {
+    // Vaciar localStorage
+    localStorage.clear();
+    alert('Está seguro que quiere borrar los datos?');
+});
+
 
 
 
