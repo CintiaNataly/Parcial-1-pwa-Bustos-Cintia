@@ -48,3 +48,18 @@ main {
     color: whitesmoke;
     padding: 2px 4px;
 }
+
+
+.custom-button {
+    background-color: black; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+  }
+  
+  .custom-button:hover {
+    background-color: yellow;
+    color: black;
+  }
+  

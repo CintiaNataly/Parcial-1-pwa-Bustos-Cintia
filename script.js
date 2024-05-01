@@ -56,11 +56,6 @@ function mostrarEpisodios(episodiosAMostrar) {
 
     episodiosAMostrar.forEach(episodio => {
 
-        /*
-        const episodioDiv = document.createElement("div");
-        episodioDiv.textContent = `${episodio.name} - Temporada ${episodio.season}`;
-        episodiosDiv.appendChild(episodioDiv);
-        */ 
         const div = document.createElement("div");
 
         // Agregar la clase "col-md-4" al elemento <div>
@@ -107,6 +102,7 @@ function mostrarEpisodios(episodiosAMostrar) {
         boton.type = "button";
         boton.classList.add("btn");
         boton.classList.add("btn-primary");
+        boton.classList.add("custom-button");
         boton.setAttribute("data-bs-toggle", "modal");
         boton.setAttribute("data-bs-target", "#exampleModal");
         boton.setAttribute("data-capitulo", `${episodio.id}`);
